@@ -1,5 +1,5 @@
 var transportLayer = require('./transportLayer.js');
-var gameMaster = require('../gameMaster.js');
+var master = require('../master.js');
 
 var connectionDict = {
 	"identity":{}	//KV structure,identity<->client info(response connection)
@@ -8,10 +8,10 @@ var connectionDict = {
 var httpLayer = transportLayer.extend({
 	name:"http transportLayer",
 	receiveMessage:function(req,res){
-		var data = {};//getdata from req
-		gameMaster.receiveMessage(data, sendMessage);
+		var msg = {};//get message from req
+		master.receiveMessage(msg, sendMessage);
 	},
-	sendMessage:function(data){}
+	sendMessage:function(msg){}
 });
 
 module.exports = httpLayer;

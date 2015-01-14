@@ -1,8 +1,6 @@
 var http = require('http');
 var httpLayer = require('./httpLayer.js');
 
-
-
 var master = {
 	connectionDict:{},
 	startService: function(){
@@ -21,10 +19,5 @@ var master = {
 	},
 	
 }
-
-
-
-
-
 
 module.exports = master.startService;
